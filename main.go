@@ -116,7 +116,7 @@ func main() {
 				file.Close()
 
 			} else {
-				file, err := os.OpenFile(fp, os.O_TRUNC, 0666)
+				file, err := os.OpenFile(fp, os.O_WRONLY|os.O_TRUNC, 0666)
 				if err != nil {
 					if debug {
 						log.Fatal(err)
@@ -142,18 +142,23 @@ func main() {
 }
 
 func getip(api string, debug bool, ch *chan string) {
+
 	resp, err := http.Get(api)
 	if err != nil {
 		if debug {
 			log.Fatal(err)
 		}
 	}
+
 	defer resp.Body.Close()
+
 	ip, err := io.ReadAll(resp.Body)
 	if err != nil {
 		if debug {
 			log.Fatal(err)
 		}
 	}
+
 	*ch <- string(ip)
+
 }
