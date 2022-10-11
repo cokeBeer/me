@@ -18,8 +18,10 @@ var (
 	API_LIST = []string{
 		"http://myexternalip.com/raw",
 		"http://api.ipify.org/",
+		"http://api.ipaddress.com/myip",
 		"https://myexternalip.com/raw",
 		"https://api.ipify.org/",
+		"https://api.ipaddress.com/myip",
 	}
 )
 

